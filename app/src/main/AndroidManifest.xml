@@ -10,8 +10,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidTutorial"
-        tools:targetApi="31">
+        android:theme="@style/Theme.AndroidTutorial">
+        <!--        yeu cau khi tu mainActivity sang app khac thì yeu cau phải có permission dc dinh nghia-->
+        <activity
+            android:name="com.eco.androidtutorial.ThirdActivity"
+            android:exported="false"
+            android:permission="com.google.socialapp.permission.SHARE_POST" />
+        <activity
+            android:name=".ExampleActivity"
+            android:exported="false">
+            <!--            intent-filter> dung de khai bao action cho activity, -->
+            <!--            Cho phep khoi tao 1 activity tu process khac-->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SecondaryActivity"
             android:exported="false" />
@@ -27,3 +42,4 @@
     </application>
 
 </manifest>
+
