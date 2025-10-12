@@ -8,4 +8,17 @@
     <string name="naigateexample">NaigateExample</string>
     <string name="navigate_to_secondary_activity">Navigate to Secondary Activity</string>
     <string name="navigate_to_third_activity">Navigate to Third Activity</string>
+    <string name="navtolifecyclennavexamplenavactivity">NavToLifecyclenNavExampleNavActivity</string>
+    <string name="kh_ng_th_y_d_li_u_c_g_i">Không thấy dữ liệu được gửi :)))</string>
+    <string name="kh_ng_th_y_d_li_u_c_g_i_2">Không thấy dữ liệu được gửi :)</string>
+    <string name="button_navigate_to_dashboard">Navigate to Dashboard (Demo ViewModel)</string>
+    <string name="navigate_to_lifecycle_example">Navigate to Lifecycle Example</string>
+    <string name="navigate_home_activity_demo_launch_mode">Navigate Home Activity Demo Launch Mode</string>
+    <string name="open_new_notification">Open new Notification</string>
+    <string name="navigate_to_launch_mode_example_activity">Navigate to Launch Mode Example Activity</string>
+    <string name="naviogate_to_sender_data_activity">Naviogate to Sender Data Activity</string>
+    <string name="choose_file">Choose file</string>
+    <string name="navigate_to_register_for_activity_result">Navigate to register for activity result</string>
+    <string name="select_image">Select Image</string>
+    <string name="navigate_to_select_image_activity">Navigate to Select Image Activity</string>
 </resources>

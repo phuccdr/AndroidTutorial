@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".launchmode.FirstActivity">
+    tools:context=".registerforactivityresult.common.ChooseFileActivity">
 
     <Button
-        android:id="@+id/btn_start_secondary_activity"
+        android:id="@+id/btn_choose_file"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/navigate_to_secondary_activity"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="120dp"
+        android:text="Chọn File 8888888"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

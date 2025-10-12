@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <!--
     Android 10 trở xuống: READ/WIRTE_EXTERNAL_STORAGE
     Android 11,12: READ_EXTERNAL_STORAGE
@@ -12,10 +11,10 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="29" />
-
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
 
     <application
         android:allowBackup="true"
@@ -26,45 +25,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTutorial">
-
-        <!--        Hoạt động giống singleTask, nhưng activity này sẽ luôn chạy trong một task riêng biệt (chỉ chứa nó).
-        Không có activity nào khác có thể nằm chung task với nó.-->
         <activity
-            android:name=".launchmode.FourthActivity"
-            android:exported="false"
-            android:launchMode="singleTask" />
-
-        <!--     Default: Trong một task, chỉ có duy nhất một instance của activity đó.
-        Nếu activity đã tồn tại ở dưới stack, toàn bộ activity ở trên nó sẽ bị xóa (finish), và activity đó sẽ được đưa lên đỉnh. Sau đó gọi onNewIntent().-->
-        <activity
-            android:name=".launchmode.HomeActivity"
-            android:exported="false"
-            android:launchMode="standard"
-            android:permission="com.google.socialapp.permission.SHARE_POST" />
-
-
-        <!--   Nếu trên đỉnh stack đã có sẵn activity đó, hệ thống sẽ không tạo mới mà gọi onNewIntent().
-            Nếu không có vẫn tạo bình thường-->
-
-        <activity
-            android:name=".launchmode.NotificationActivity"
-            android:exported="false"
-            android:launchMode="singleTop" />
-
-        <!--        một instance mới của Activity sẽ được tạo và đưa vào stack, dù Activity đó đã có trước đó.-->
-        <activity
-            android:name=".launchmode.FirstActivity"
-            android:exported="false"
-            android:launchMode="standard" />
-
-        <activity
-            android:name=".permission.SelectImageActivity"
+            android:name=".registerforactivityresult.common.ChooseFileActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterForActivityResultExampleActivity"
-            android:exported="false" /> <!-- yeu cau khi tu mainActivity sang app khac thì yeu cau phải có permission dc dinh nghia -->
+            android:name=".lifecycle.viewmodel.DashboardActivity"
+            android:exported="false" />
         <activity
-            android:name=".IntentFilterExampleActivity"
+            android:name=".lifecycle.LifecycleExampleNavActivity"
+            android:exported="false" />
+        <activity
+            android:name=".lifecycle.LifecycleExampleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".senddatabetweenactivity.ReceiverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".senddatabetweenactivity.SenderActivity"
+            android:exported="false" />
+        <!--
+                Hoạt động giống singleTask, nhưng activity này sẽ luôn chạy trong một task riêng biệt (chỉ chứa nó).
+        Không có activity nào khác có thể nằm chung task với nó.
+        -->
+        <activity
+            android:name=".managementbackstack.manifestattributes.launchmode.AlarmRingActivity"
+            android:exported="false"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".managementbackstack.manifestattributes.launchmode.HomeActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <!--
+     Trong một task, chỉ có duy nhất một instance của activity đó.
+        Nếu activity đã tồn tại ở dưới stack, toàn bộ activity ở trên nó sẽ bị xóa (finish), và activity đó sẽ được đưa lên đỉnh. Sau đó gọi onNewIntent().
+        -->
+        <activity
+            android:name=".managementbackstack.manifestattributes.launchmode.NotificationDetailActivity"
+            android:exported="false"
+            android:launchMode="singleTop" /> <!-- Nếu Acvitiy đang trên đỉnh stack thì không tạo mới mà gọi onNewIntent(). Nếu không thì vẫn tạo như bình thường. -->
+        <activity
+            android:name=".managementbackstack.manifestattributes.launchmode.LaunchModeExampleActivity"
+            android:exported="false"
+            android:launchMode="standard" />
+        <activity
+            android:name=".registerforactivityresult.permission.SelectImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".registerforactivityresult.common.RegisterForActivityResultExampleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intentfilter.IntentFilterExampleActivity"
             android:exported="false">
 
             <!-- intent-filter> dung de khai bao action cho activity, -->
@@ -78,7 +88,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NavigateExampleActivity"
+            android:name=".navigate.NavigateExampleActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

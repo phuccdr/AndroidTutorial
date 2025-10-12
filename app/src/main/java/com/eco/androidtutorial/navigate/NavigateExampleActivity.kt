@@ -1,4 +1,4 @@
-package com.eco.androidtutorial
+package com.eco.androidtutorial.navigate
 
 import android.os.Bundle
 import android.util.Log

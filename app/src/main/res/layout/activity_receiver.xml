@@ -5,29 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registerforactivityresult.permission.SelectImageActivity">
+    tools:context=".senddatabetweenactivity.ReceiverActivity">
 
-
-    <ImageView
-        android:id="@+id/iv_image"
+    <TextView
+        android:id="@+id/tv_data_from_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_select_image"
+        android:text="@string/kh_ng_th_y_d_li_u_c_g_i"
+        app:layout_constraintBottom_toTopOf="@+id/tv_data_from_bundle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.5" />
 
-    <Button
-        android:id="@+id/btn_select_image"
+    <TextView
+        android:id="@+id/tv_data_from_bundle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="@string/select_image"
+        android:text="@string/kh_ng_th_y_d_li_u_c_g_i_2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/iv_image"
-        app:layout_constraintStart_toStartOf="@+id/iv_image"
-        app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_data_from_intent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

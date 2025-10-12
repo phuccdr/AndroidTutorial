@@ -1,4 +1,4 @@
-package com.eco.androidtutorial.permission
+package com.eco.androidtutorial.registerforactivityresult.permission.module
 
 import android.content.Context
 import android.content.pm.PackageManager
@@ -6,22 +6,24 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.content.PackageManagerCompat
 import androidx.fragment.app.Fragment
+import java.lang.ref.WeakReference
 
 /**
  * vi sao dung private constructor: Ngăn chặn việc tạo đối tượng từ bên ngoài lớp của cac lớp kế thừa abstract class
  * chỉ được tạo qua các phương thức đã được định nghĩa trong lớp abstract.
+ * 
+ * Sử dụng WeakReference cho context để tránh memory leak khi Activity/Fragment bị destroy
  */
 abstract class SinglePermission private constructor() : Permission {
     abstract val permission: String
     private var onSuccess: (() -> Unit)? = null
     private var onDeny: ((permission: String) -> Unit)? = null
-    private var context: Context? = null
+    private var contextRef: WeakReference<Context>? = null
     private var permissionLauncher: ActivityResultLauncher<String>? = null
 
     constructor(fragment: Fragment) : this() {
-        context = fragment.requireContext()
+        contextRef = WeakReference(fragment.requireContext())
         permissionLauncher = fragment.registerForActivityResult(
             ActivityResultContracts.RequestPermission()
         ) { isGranted ->
@@ -34,7 +36,7 @@ abstract class SinglePermission private constructor() : Permission {
     }
 
     constructor(activity: AppCompatActivity) : this() {
-        context = activity
+        contextRef = WeakReference(activity)
         permissionLauncher = activity.registerForActivityResult(
             ActivityResultContracts.RequestPermission()
         ) { isGranted ->
@@ -47,8 +49,9 @@ abstract class SinglePermission private constructor() : Permission {
     }
 
     override fun isGranted(): Boolean {
+        val context = contextRef?.get() ?: return false
         return ContextCompat.checkSelfPermission(
-            context!!, permission
+            context, permission
         ) == PackageManager.PERMISSION_GRANTED
     }
 
@@ -66,4 +69,15 @@ abstract class SinglePermission private constructor() : Permission {
         return this
     }
 
+    /**
+     * Gọi method này để clear resources và tránh memory leak
+     * Nên gọi trong onDestroy() của Activity/Fragment
+     */
+    fun clear() {
+        contextRef?.clear()
+        contextRef = null
+        onSuccess = null
+        onDeny = null
+        permissionLauncher = null
+    }
 }

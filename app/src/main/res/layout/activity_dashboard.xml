@@ -3,40 +3,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="device"
+            type="com.eco.androidtutorial.senddatabetweenactivity.Device" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".navigate.NavigateExampleActivity">
+        tools:context=".lifecycle.viewmodel.DashboardActivity">
 
         <TextView
-            android:id="@+id/gameState"
+            android:id="@+id/btn_nav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/hello_world"
+            android:layout_marginTop="16dp"
+            android:text="@string/naigateexample"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/deviceName"
+            android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/hello"
+            android:gravity="center"
+            android:text="@{device.toString()}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gameState" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_nav" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_registerforactivityresult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/click"
+            android:text="@string/registerforactivityresultexample"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/deviceName" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
