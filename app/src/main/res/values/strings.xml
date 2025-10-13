@@ -21,4 +21,10 @@
     <string name="navigate_to_register_for_activity_result">Navigate to register for activity result</string>
     <string name="select_image">Select Image</string>
     <string name="navigate_to_select_image_activity">Navigate to Select Image Activity</string>
+    <string name="navigate_to_registerforactivityresult">Navigate to RegisterForActivityResult</string>
+    <string name="button_navigate_to_clear_top_flag">Button navigate to clear top flag</string>
+    <string name="button_navigate_to_new_task_flag">Button navigate to new task flag</string>
+    <string name="btn_navigate_to_single_top_flag">Button navigate to single top flag</string>
+    <string name="senddatawithintent">SendDataWithIntent</string>
+    <string name="send_data_with_bundle">Send data with bundle</string>
 </resources>

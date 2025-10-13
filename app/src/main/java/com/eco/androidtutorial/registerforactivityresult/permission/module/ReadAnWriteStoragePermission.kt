@@ -1,10 +1,9 @@
-package com.eco.androidtutorial.registerforactivityresult.permission
+package com.eco.androidtutorial.registerforactivityresult.permission.module
 
 import android.Manifest
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.eco.androidtutorial.registerforactivityresult.permission.module.MultiPermission
 
 /**
  * Permission class để xử lý quyền đọc và ghi external storage
@@ -32,17 +31,9 @@ class ReadAnWriteStoragePermission : MultiPermission {
                 Manifest.permission.READ_MEDIA_VIDEO,
                 Manifest.permission.READ_MEDIA_AUDIO
             )
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            arrayOf(
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            )
-        } else {
-            /** Android 10 (API 29) trở xuống*/
-            arrayOf(
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-            )
-        }
+        } else arrayOf(
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        )
 
 
 }

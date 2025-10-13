@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.eco.androidtutorial.databinding.ActivityNotificationBinding
 import com.eco.androidtutorial.managementbackstack.manifestattributes.launchmode.model.Notification
+import com.eco.androidtutorial.utils.logTasksAndBackstack
 import java.util.Date
 
 private val TAG = "NotificationActivity"
@@ -27,13 +28,13 @@ class NotificationDetailActivity : AppCompatActivity() {
         binding = ActivityNotificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupUI()
+        logTasksAndBackstack(this)
     }
 
     private fun setupUI() {
         binding.btnOpenNewNotification.setOnClickListener {
             count++
             val intent = Intent(this, NotificationDetailActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             intent.putExtra(
                 "Notification $count", Notification(
                     "New Notification", "New Notification", Date()

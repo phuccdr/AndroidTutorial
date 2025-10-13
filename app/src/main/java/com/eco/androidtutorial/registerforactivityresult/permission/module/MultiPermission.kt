@@ -45,7 +45,6 @@ abstract class MultiPermission private constructor() : Permission {
             ActivityResultContracts.RequestMultiplePermissions()
         ) { results ->
             val deniedPermissions = results.filterValues { !it }.keys
-
             if (deniedPermissions.isNotEmpty()) {
                 onDeny?.invoke(deniedPermissions.toTypedArray())
             } else {

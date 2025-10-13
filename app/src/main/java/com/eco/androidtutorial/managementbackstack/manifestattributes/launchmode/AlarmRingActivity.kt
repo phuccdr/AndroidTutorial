@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.eco.androidtutorial.R
+import com.eco.androidtutorial.utils.logTasksAndBackstack
 
 /**
  * Single Instance: tạo activity chạy trên 1 task riêng và task đó chỉ chứa 1 instance của activity đó
@@ -17,6 +18,6 @@ class AlarmRingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_fourth)
-
+        logTasksAndBackstack(this)
     }
 }

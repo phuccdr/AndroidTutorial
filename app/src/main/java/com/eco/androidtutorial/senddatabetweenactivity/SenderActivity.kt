@@ -29,7 +29,7 @@ class SenderActivity : AppCompatActivity() {
                 intent.putExtra("SendDataFromIntent", "SendDataFromIntent")
                 startActivity(intent)
             }
-            btnSendDataIntent.setOnClickListener {
+            btnSendDataBundle.setOnClickListener {
                 val intent = Intent(this@SenderActivity, ReceiverActivity::class.java)
                 val bundle = Bundle().apply {
                     putParcelable("Device1", Device("1", "Samsung", "Phone"))

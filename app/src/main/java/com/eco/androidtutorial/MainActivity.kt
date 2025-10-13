@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.eco.androidtutorial.databinding.ActivityMainBinding
 import com.eco.androidtutorial.lifecycle.LifecycleExampleActivity
 import com.eco.androidtutorial.lifecycle.viewmodel.DashboardActivity
+import com.eco.androidtutorial.managementbackstack.intentflag.ClearTopFlagActivity
 import com.eco.androidtutorial.managementbackstack.manifestattributes.launchmode.LaunchModeExampleActivity
 import com.eco.androidtutorial.registerforactivityresult.common.RegisterForActivityResultExampleActivity
 import com.eco.androidtutorial.registerforactivityresult.permission.SelectImageActivity
@@ -36,11 +37,20 @@ class MainActivity : AppCompatActivity() {
             btnNavToSenderDataActivity.setOnClickListener {
                 navigateToSenderDataActivity()
             }
-            btnNavToRegisterforactivityresult.setOnClickListener {
+            btnNavigateToRegisterForActivityResult.setOnClickListener {
                 navigateToRegisterForActivityResultActivity()
             }
             btnNavigateSelectImage.setOnClickListener {
                 navigateToSelectImageActivity()
+            }
+            btnNavigateToClearTopFlag.setOnClickListener {
+                navigateToClearTopFlagActivity()
+            }
+            btnNavigateToNewTaskFlag.setOnClickListener {
+                navigateToNewTaskFlagActivity()
+            }
+            btnNavigateToSingleTopFlag.setOnClickListener {
+                navigateToSingleTopFlagActivity()
             }
         }
     }
@@ -74,4 +84,23 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, SelectImageActivity::class.java)
         startActivity(intent)
     }
+
+    private fun navigateToClearTopFlagActivity() {
+        val intent = Intent(this, ClearTopFlagActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
+    }
+
+    private fun navigateToNewTaskFlagActivity() {
+        val intent = Intent(this, ClearTopFlagActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+    }
+
+    private fun navigateToSingleTopFlagActivity() {
+        val intent = Intent(this, ClearTopFlagActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
+        startActivity(intent)
+    }
+
 }

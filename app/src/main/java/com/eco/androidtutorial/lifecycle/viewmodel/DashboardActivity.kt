@@ -1,6 +1,5 @@
 package com.eco.androidtutorial.lifecycle.viewmodel
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -10,13 +9,15 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.eco.androidtutorial.databinding.ActivityDashboardBinding
-import com.eco.androidtutorial.navigate.NavigateExampleActivity
-import com.eco.androidtutorial.navigate.NavigateExampleActivity.Companion.EXTRA_KEY
-import com.eco.androidtutorial.registerforactivityresult.common.RegisterForActivityResultExampleActivity
 import kotlinx.coroutines.launch
 
 private const val TAG = "DashboardActivity"
 
+/**
+ * Trong ComponentActivity chứa ViewModelStoreOwner có:
+ * private val map = mutableMapOf<String, ViewModel>() -> 1 activity có thể có nhiều viewModel nó được gắn với vòng đời để
+ * Khi
+ */
 class DashboardActivity : AppCompatActivity() {
     private val viewModel: DashboardViewModel by viewModels()
     private lateinit var binding: ActivityDashboardBinding
@@ -25,17 +26,7 @@ class DashboardActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupUI()
         observeData()
-    }
-
-    private fun setupUI() {
-        binding.btnNav.setOnClickListener {
-            navigateToNavigateExampleActivity(viewModel.devices.value[0].name)
-        }
-        binding.btnRegisterforactivityresult.setOnClickListener {
-            navigateToRegisterForActivityResultExampleActivity()
-        }
     }
 
     private fun observeData() {
@@ -47,21 +38,6 @@ class DashboardActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun navigateToRegisterForActivityResultExampleActivity() {
-        binding.btnRegisterforactivityresult.setOnClickListener {
-            val intent = Intent(this, RegisterForActivityResultExampleActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun navigateToNavigateExampleActivity(nameDevice: String?) {
-        val intent = Intent(this, NavigateExampleActivity::class.java)
-        nameDevice?.let {
-            intent.putExtra(EXTRA_KEY, it)
-        }
-        startActivity(intent)
     }
 
     override fun onStart() {

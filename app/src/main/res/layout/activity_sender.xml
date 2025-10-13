@@ -11,18 +11,18 @@
         android:id="@+id/btn_send_data_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SendDataWithIntent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_nav2"
+        android:text="@string/senddatawithintent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_send_data_bundle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/btn_nav2"
+        android:id="@+id/btn_send_data_bundle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/send_data_with_bundle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_send_data_intent"
         app:layout_constraintStart_toStartOf="@+id/btn_send_data_intent"

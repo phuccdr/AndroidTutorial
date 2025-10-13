@@ -24,7 +24,7 @@ class RegisterForActivityResultExampleActivity : AppCompatActivity() {
     private val chooseFile =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
-                binding.tvUriFile.text = result.data?.data.toString()
+                binding.tvUriFile.text = result.data?.getStringExtra("result")
             }
         }
 

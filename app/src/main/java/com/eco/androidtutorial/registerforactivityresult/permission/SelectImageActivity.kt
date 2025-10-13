@@ -1,13 +1,17 @@
 package com.eco.androidtutorial.registerforactivityresult.permission
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.widget.Toast
+import android.provider.Settings
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.eco.androidtutorial.databinding.ActivitySelectImageBinding
 import com.eco.androidtutorial.registerforactivityresult.permission.module.MultiPermission
+import com.eco.androidtutorial.registerforactivityresult.permission.module.ReadAnWriteStoragePermission
 
 class SelectImageActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySelectImageBinding
@@ -32,8 +36,8 @@ class SelectImageActivity : AppCompatActivity() {
     private fun handlerPermission() {
         permission = ReadAnWriteStoragePermission(this).onSuccess {
             openGallery()
-        }.onDeny {
-            Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+        }.onDeny { permissionsDenied ->
+            showDialogPermission(permissionsDenied)
         }
     }
 
@@ -50,8 +54,20 @@ class SelectImageActivity : AppCompatActivity() {
         }
     }
 
-    fun openGallery() {
+    private fun openGallery() {
         pickImageLauncher.launch("image/*")
+    }
+
+    private fun showDialogPermission(permissionsDenied: Array<String>) {
+        AlertDialog.Builder(this)
+            .setTitle("Vui cấp các quyền sau đây để sử dụng tính năng của ứng dụng")
+            .setMessage("Ứng dụng cần các quyền sau: ${permissionsDenied.joinToString()}. Vui lòng cấp quyền trong Cài đặt.")
+            .setPositiveButton("Cài đặt") { _, _ ->
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                    data = Uri.fromParts("package", this@SelectImageActivity.packageName, null)
+                }
+                startActivity(intent)
+            }.setNegativeButton("Hủy", null).setCancelable(true).show()
     }
 
     override fun onDestroy() {

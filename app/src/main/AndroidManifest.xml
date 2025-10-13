@@ -15,7 +15,6 @@
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,6 +24,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTutorial">
+        <activity
+            android:name=".managementbackstack.manifestattributes.taskaffinity.SecondaryTaskAffinityActovity"
+            android:exported="false" />
+        <activity
+            android:name=".managementbackstack.manifestattributes.alwaysretaintaskstate.AlwaysRetainTaskStateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".managementbackstack.manifestattributes.cleartaskonlaunch.ClearTaskOnLaunchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".managementbackstack.manifestattributes.taskaffinity.FirstTaskAffinityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".managementbackstack.intentflag.SingleTopFlagActivity"
+            android:exported="false" />
+        <activity
+            android:name=".managementbackstack.intentflag.ClearTopFlagActivity"
+            android:exported="false" />
+        <activity
+            android:name=".managementbackstack.intentflag.NewTaskFlagActivity"
+            android:exported="false" />
         <activity
             android:name=".registerforactivityresult.common.ChooseFileActivity"
             android:exported="false" />
@@ -43,26 +63,27 @@
         <activity
             android:name=".senddatabetweenactivity.SenderActivity"
             android:exported="false" />
-        <!--
-                Hoạt động giống singleTask, nhưng activity này sẽ luôn chạy trong một task riêng biệt (chỉ chứa nó).
-        Không có activity nào khác có thể nằm chung task với nó.
-        -->
+
         <activity
             android:name=".managementbackstack.manifestattributes.launchmode.AlarmRingActivity"
             android:exported="false"
             android:launchMode="singleInstance" />
+        <!--
+              singleInstance: Hoạt động giống singleTask, nhưng activity này sẽ luôn chạy trong một task riêng biệt (chỉ chứa nó).
+        Không có activity nào khác có thể nằm chung task với nó.
+        -->
         <activity
             android:name=".managementbackstack.manifestattributes.launchmode.HomeActivity"
             android:exported="false"
             android:launchMode="singleTask" />
         <!--
-     Trong một task, chỉ có duy nhất một instance của activity đó.
+        SingleTask: Trong một task, chỉ có duy nhất một instance của activity đó.
         Nếu activity đã tồn tại ở dưới stack, toàn bộ activity ở trên nó sẽ bị xóa (finish), và activity đó sẽ được đưa lên đỉnh. Sau đó gọi onNewIntent().
         -->
         <activity
             android:name=".managementbackstack.manifestattributes.launchmode.NotificationDetailActivity"
             android:exported="false"
-            android:launchMode="singleTop" /> <!-- Nếu Acvitiy đang trên đỉnh stack thì không tạo mới mà gọi onNewIntent(). Nếu không thì vẫn tạo như bình thường. -->
+            android:launchMode="singleTop" /> <!-- SingleTop: Nếu Acvitiy đang trên đỉnh stack thì không tạo mới mà gọi onNewIntent(). Nếu không thì vẫn tạo như bình thường. -->
         <activity
             android:name=".managementbackstack.manifestattributes.launchmode.LaunchModeExampleActivity"
             android:exported="false"

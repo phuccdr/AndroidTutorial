@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.eco.androidtutorial.databinding.ActivityHomeBinding
+import com.eco.androidtutorial.utils.logTasksAndBackstack
 
 class HomeActivity : AppCompatActivity() {
     /**
@@ -21,6 +22,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Log.d(TAG, "onCreate running")
+        logTasksAndBackstack(this)
     }
 
     override fun onNewIntent(intent: Intent) {
