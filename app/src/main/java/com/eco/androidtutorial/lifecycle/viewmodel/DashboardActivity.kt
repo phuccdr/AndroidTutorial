@@ -16,7 +16,9 @@ private const val TAG = "DashboardActivity"
 /**
  * Trong ComponentActivity chứa ViewModelStoreOwner có:
  * private val map = mutableMapOf<String, ViewModel>() -> 1 activity có thể có nhiều viewModel nó được gắn với vòng đời để
- * Khi
+ * trong ActivityComponent chứa logic để xu lý khi activity destroy thì các viewModel trong activity cũng bị destroy
+ * ComponentActivity implement LifecycleOwner: có thuộc tính lifecycle:Lifecycle (abstract class chứa các trạng thái của activity, phương thức để theo dõi lifecycle
+ * và có coroutineScope được gắn với lifecycle.)
  */
 class DashboardActivity : AppCompatActivity() {
     private val viewModel: DashboardViewModel by viewModels()
