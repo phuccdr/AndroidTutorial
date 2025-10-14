@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <resources>
-      <color name="black">#FF000000</color>
-      <color name="white">#FFFFFFFF</color>
-  </resources>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_alpha_60">#99FFFFFF</color>
+    <color name="white_alpha_40">#66FFFFFF</color>
+    <color name="white_alpha_30">#4DFFFFFF</color>
+    <color name="white_alpha_20">#33FFFFFF</color>"
+    <color name="blue_light">#ADD8FF</color>
+    <color name="blue_light_alpha_28">#4DADD8FF</color>
+
+    <color name="blue_19ACFF">#19ACFF</color>
+    <color name="blue_B0DFFF">#B0DFFF</color>
+
+</resources>
