@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button1"
             buttonConfig="@{buttons[0]}"
             android:layout_width="0dp"
@@ -38,7 +38,7 @@
             app:layout_constraintStart_toEndOf="@+id/button1"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/button2"
             buttonConfig="@{buttons[1]}"
             android:layout_width="0dp"

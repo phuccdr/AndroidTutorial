@@ -1,4 +1,4 @@
-package com.eco.androidtutorial
+package com.eco.androidtutorial.ui
 
 import android.content.Intent
 import android.os.Bundle
