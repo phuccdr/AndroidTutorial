@@ -11,5 +11,12 @@
 
     <color name="blue_19ACFF">#19ACFF</color>
     <color name="blue_B0DFFF">#B0DFFF</color>
+    <color name="blue_544CEF">#544CEF</color>
+    <color name="blue_6477FF">#6477FF</color>
+    <color name="color_190E2B">#190E2B</color>
+    <color name="color_EAF5F8">#EAF5F8</color>
+    <color name="color_5B5FF6">#5B5FF6</color>
+    <color name="color_FFFFFF_alpha_8">#14FFFFFF</color>
+
 
 </resources>

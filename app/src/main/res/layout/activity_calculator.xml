@@ -8,7 +8,7 @@
     android:background="@drawable/background_calculator"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ui.CalculatorActivity">
+    tools:context=".ui.calculator.CalculatorActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout1"

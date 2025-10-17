@@ -1,11 +1,10 @@
-package com.eco.androidtutorial.ui
+package com.eco.androidtutorial.ui.calculator
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.eco.androidtutorial.R
 import com.eco.androidtutorial.databinding.ActivityCalculatorBinding
-import com.eco.androidtutorial.ui.customview.ButtonConfig
 
 class CalculatorActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCalculatorBinding

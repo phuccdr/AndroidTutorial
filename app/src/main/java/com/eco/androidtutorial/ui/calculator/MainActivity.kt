@@ -1,4 +1,4 @@
-package com.eco.androidtutorial.ui
+package com.eco.androidtutorial.ui.calculator
 
 import android.content.Intent
 import android.os.Bundle

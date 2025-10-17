@@ -1,4 +1,4 @@
-package com.eco.androidtutorial.ui.customview
+package com.eco.androidtutorial.ui.calculator
 
 import com.eco.androidtutorial.R
 

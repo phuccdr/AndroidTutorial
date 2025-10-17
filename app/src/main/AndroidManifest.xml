@@ -25,7 +25,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTutorial">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.calculator.CalculatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.calculator.MainActivity"
             android:exported="false" />
         <activity
             android:name=".managementbackstack.manifestattributes.taskaffinity.SecondaryTaskAffinityActovity"
@@ -114,7 +117,7 @@
             android:name=".navigate.NavigateExampleActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.CalculatorActivity"
+            android:name=".ui.PaywallSale50PercentWeeklyActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

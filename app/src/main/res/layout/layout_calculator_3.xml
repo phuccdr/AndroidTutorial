@@ -5,7 +5,7 @@
 
         <variable
             name="buttons"
-            type="java.util.List&lt;com.eco.androidtutorial.ui.customview.ButtonConfig>" />
+            type="java.util.List&lt;com.eco.androidtutorial.ui.calculator.ButtonConfig>" />
         />
     </data>
 
