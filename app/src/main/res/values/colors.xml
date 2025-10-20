@@ -17,6 +17,10 @@
     <color name="color_EAF5F8">#EAF5F8</color>
     <color name="color_5B5FF6">#5B5FF6</color>
     <color name="color_FFFFFF_alpha_8">#14FFFFFF</color>
-
+    <color name="color_ECF4FA">#ECF4FA</color>
+    <color name="color_transparent">#00FFFFFF</color>
+    <color name="color_000000_alpha_60">#99000000</color>
+    <color name="color_F12F19">#F12F19</color>
+    <color name="color_6B1504">#6B1504</color>
 
 </resources>

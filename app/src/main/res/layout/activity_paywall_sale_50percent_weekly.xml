@@ -8,6 +8,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnClose"
         android:layout_width="@dimen/_24sdp"
         android:layout_height="@dimen/_24sdp"
         android:layout_marginStart="@dimen/_13sdp"
@@ -25,32 +26,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/mainContentPaywallSale"
+        <FrameLayout
+            android:id="@+id/frameLottiePaywallSale"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
             android:background="@drawable/bg_paywall_50percent_lottie">
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="0dp"
+                android:id="@+id/lottieAnimation"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_gravity="top|center_horizontal"
+                android:scaleType="centerCrop"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
                 app:lottie_rawRes="@raw/lottie_paywall_50percent_weekly" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
 
         <include
             android:id="@+id/bottomSheetPaywall"
             layout="@layout/bottom_sheet_paywall_50percent_weekly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             app:behavior_hideable="false"
-            app:behavior_peekHeight="@dimen/_232sdp"
-            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:behavior_peekHeight="@dimen/_300sdp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

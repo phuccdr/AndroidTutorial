@@ -25,6 +25,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTutorial">
         <activity
+            android:name=".ui.PreviewResultPaywallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.DialogSale30PercentYearlyActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.calculator.CalculatorActivity"
             android:exported="false" />
         <activity

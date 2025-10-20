@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/_14sdp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton"
+        android:layout_width="@dimen/_23sdp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@drawable/btn_close"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bgV9Compress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/bg_dialog_sale_30percent_weekly"
+        app:layout_constraintDimensionRatio="0.84"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imvTextV9Compress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_42sdp"
+        android:background="@drawable/ic_text_v9_compress"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@+id/btnPro"
+        app:layout_constraintTop_toTopOf="@id/bgV9Compress" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnPro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/_13sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/imvTextV9Compress"
+        app:layout_constraintDimensionRatio="W,41.29:20.64"
+        app:layout_constraintEnd_toEndOf="@+id/bgV9Compress"
+        app:layout_constraintTop_toTopOf="@+id/imvTextV9Compress"
+        app:srcCompat="@drawable/btn_pro" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@drawable/bg_button_claim_offer_sale_30percent_weekly"
+        app:layout_constraintDimensionRatio="6.15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bgV9Compress" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
