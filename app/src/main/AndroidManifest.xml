@@ -25,10 +25,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTutorial">
         <activity
-            android:name=".ui.PreviewResultPaywallActivity"
+            android:name=".ui.dialogyearly.DemoDialogSale30percentYearlyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.DialogSale30PercentYearlyActivity"
+
+            android:name=".ui.paywall50percentweekly.PaywallSale50PercentWeeklyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.paywallonboaring.PaywallOnboardingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dialogweekly.DemoDialogSale30percentWeeklyActivity"
             android:exported="false" />
         <activity
             android:name=".ui.calculator.CalculatorActivity"
@@ -123,7 +130,7 @@
             android:name=".navigate.NavigateExampleActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.PaywallSale50PercentWeeklyActivity"
+            android:name=".ui.PaywallMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

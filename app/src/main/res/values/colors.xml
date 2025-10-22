@@ -8,7 +8,6 @@
     <color name="white_alpha_20">#33FFFFFF</color>"
     <color name="blue_light">#ADD8FF</color>
     <color name="blue_light_alpha_28">#4DADD8FF</color>
-
     <color name="blue_19ACFF">#19ACFF</color>
     <color name="blue_B0DFFF">#B0DFFF</color>
     <color name="blue_544CEF">#544CEF</color>
@@ -22,5 +21,11 @@
     <color name="color_000000_alpha_60">#99000000</color>
     <color name="color_F12F19">#F12F19</color>
     <color name="color_6B1504">#6B1504</color>
-
+    <color name="color_08080E_alpha_45">#7308080E</color>
+    <color name="color_0F1E47">#0F1E47</color>
+    <color name="color_0F1E47_alpha_40">#660F1E47</color>
+    <color name="color_4D5A68">#4D5A68</color>
+    <color name="color_off_switch">#0F1E47</color>
+    <color name="color_on_switch">#6477FF</color>
+    <color name="color_5F5F5F">#5F5F5F</color>
 </resources>

@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.eco.androidtutorial"
-        minSdk = 32
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"

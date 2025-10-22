@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidTutorial</string>
+    <string name="app_name">Phuc_cdr_AndroidTutorial</string>
     <string name="start_secondary">Start Secondary</string>
     <string name="hello_world">Hello World</string>
     <string name="click">Click</string>
@@ -38,4 +38,20 @@
     <string name="faster_compress_made_simple">Faster Compress Made Simple</string>
     <string name="_30percent">30%</string>
     <string name="try_3_for_free_then_price_per_year_n_auto_renew_cancel_anytime">Try 3 for FREE then $[price] per year.\n Auto renew, cancel anytime.</string>
+    <string name="try_3_days_for_free_then_8_99_per_week">Try 3 days for FREE, then 8.99$ per week.\nAuto renew, cancel anytime</string>
+    <string name="we_couldnt_load_the_information">We couldn’t load the information</string>
+    <string name="try_again"><u>Try Again</u></string>
+    <string name="yearly">Yearly</string>
+    <string name="weekly">Weekly</string>
+    <string name="show_dialog">Show dialog</string>
+    <string name="shrink_size_keep_quality">SHRINK SIZE\nKEEP QUALITY</string>
+    <string name="_14_99_year_after_free_trial_ends_auto_renew_cancel_anytime">$14.99/year after free trial ends.\nAuto renew, Cancel anytime</string>
+    <string name="free_trial_enabled">Free trial enabled</string>
+    <string name="try_for_free">TRY FOR FREE</string>
+    <string name="by_continuing_you_agree_to_our_terms_and_privacy_policies_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_subscription_is_not_required_to_use_v9compress">By continuing you agree to our Terms and Privacy policies.\nSubscription gives you access to V9Compress\'s premium features, all ads will be removed.\nSubscription plans are automatically renewed and can becanceled anytime in Subscriptions on Google Play.\nYou will not be charged if subscription is canceled before trial period ends.\nSubscription is not required to use V9Compress</string>
+    <string name="continue1">CONTINUE</string>
+    <string name="introductionYearlyEligible">$14.99/year after free trial ends.\nAuto renew, Cancel anytime</string>
+    <string name="introductionWeeklyEligible">$4.99/week after free trial ends.\nAuto renew, Cancel anytime</string>
+    <string name="introductionYearlyNotEligible">$14.99/year.\nAuto renew, Cancel anytime</string>
+    <string name="introductionWeeklyNotEligible">$4.99/week.\nAuto renew, Cancel anytime</string>
 </resources>
