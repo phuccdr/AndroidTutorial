@@ -1,5 +1,6 @@
 package com.eco.androidtutorial.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Typeface
@@ -18,6 +19,7 @@ import androidx.core.net.toUri
 class TermAndPrivacyHelper (
     private val context: Context,
     private val textView: TextView?,
+    private val textColor:Int = android.R.color.white,
 ) {
     private val termsUrl: String =
         "https://www.youtube.com/watch?v=-mkCzFPo08M&list=RDX-ZBSrwouRs&index=2"
@@ -27,8 +29,8 @@ class TermAndPrivacyHelper (
     private val termsKeyword: String = "Terms"
     private val privacyKeyword: String = "Privacy policies"
     private val isUnderline: Boolean = true
-    private val textColor: Int = android.R.color.white
 
+    @SuppressLint("SuspiciousIndentation")
     fun setup(){
         val fullText = textView?.text.toString()
         val spannableString = SpannableString(fullText)
@@ -103,6 +105,4 @@ class TermAndPrivacyHelper (
         val intent = Intent(Intent.ACTION_VIEW, url.toUri())
         context.startActivity(intent)
     }
-
-
 }

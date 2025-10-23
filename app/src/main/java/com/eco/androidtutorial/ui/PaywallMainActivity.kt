@@ -9,6 +9,8 @@ import com.eco.androidtutorial.ui.dialogweekly.DemoDialogSale30percentWeeklyActi
 import com.eco.androidtutorial.ui.dialogyearly.DemoDialogSale30percentYearlyActivity
 import com.eco.androidtutorial.ui.paywall50percentweekly.PaywallSale50PercentWeeklyActivity
 import com.eco.androidtutorial.ui.paywallonboaring.PaywallOnboardingActivity
+import com.eco.androidtutorial.ui.unlock.UnlockActivity
+import com.eco.androidtutorial.ui.yearlysubscriptionbottomsheet.YearlySubscriptionBottomSheetActivity
 
 class PaywallMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPaywallMainBinding
@@ -34,6 +36,15 @@ class PaywallMainActivity : AppCompatActivity() {
             btnNavigateToPaywallOnboarding.setOnClickListener {
                 navigateToPaywallOnboardingActivity()
             }
+            btnNavigateToUnLockFeature.setOnClickListener {
+                navigateToUnlockFeatureActivity()
+            }
+            btnNavigateToYearlySubscriptionBottomSheet.setOnClickListener {
+                navigateToYearlySubscriptionBottomSheetActivity()
+            }
+            btnNavigateToYearlySubscriptionFullScreen.setOnClickListener {
+                navigateToYearlySubscriptionFullScreenActivity()
+            }
         }
     }
 
@@ -55,6 +66,20 @@ class PaywallMainActivity : AppCompatActivity() {
     private fun navigateToPaywallOnboardingActivity() {
         val intent = Intent(this, PaywallOnboardingActivity::class.java)
         startActivity(intent)
+    }
 
+    private fun navigateToUnlockFeatureActivity() {
+        val intent = Intent(this, UnlockActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToYearlySubscriptionBottomSheetActivity() {
+        val intent = Intent(this, YearlySubscriptionBottomSheetActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToYearlySubscriptionFullScreenActivity() {
+        val intent = Intent(this, YearlySubscriptionFullScreenActivity::class.java)
+        startActivity(intent)
     }
 }

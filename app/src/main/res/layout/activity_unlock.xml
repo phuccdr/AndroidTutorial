@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.eco.androidtutorial.ui.paywallonboaring.StateTrial" />
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="stateTrial"
+            type="com.eco.androidtutorial.ui.paywallonboaring.StateTrial" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_D0DFFF"
+        android:padding="@dimen/_12sdp"
+        tools:context=".ui.unlock.UnlockActivity">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bebas_neue_regular"
+            android:text="@string/high_quality_ncompression"
+            android:textAllCaps="true"
+            android:textColor="@color/color_0E111B"
+            android:textSize="@dimen/_40sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:layout_constraintDimensionRatio="H,328:306"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle"
+            app:srcCompat="@drawable/img_unlock" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtIntroduction"
+            setIntroductionVisibility='@{stateTrial}'
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/readex_pro_regular"
+            android:gravity="center"
+            android:text="@string/_14_99_year_after_free_trial_ends_auto_renew_cancel_anytime"
+            android:textColor="@color/color_0E111B"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnTryForFree"
+            setBackgroundButton='@{stateTrial}'
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/bg_button_try_for_free"
+            android:fontFamily="@font/readex_pro_bold"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/try_for_free"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintDimensionRatio="H,320:54"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtIntroduction"
+            app:layout_constraintWidth_percent="0.88" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTermsAndPrivacy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/readex_pro_regular"
+            android:gravity="center"
+            android:lineHeight="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="@string/by_continuing_you_agree_to_our_terms_and_privacy_policies_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_subscription_is_not_required_to_use_v9compress"
+            android:textColor="@color/color_4D5A68"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@+id/btnTryForFree"
+            app:layout_constraintStart_toStartOf="@+id/btnTryForFree"
+            app:layout_constraintTop_toBottomOf="@+id/btnTryForFree" />
+
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:indeterminateTint="@color/color_FFFFFF66"
+            android:padding="@dimen/_12sdp"
+            android:visibility='@{stateTrial == StateTrial.Loading ? View.VISIBLE : View.GONE}'
+            app:layout_constraintBottom_toBottomOf="@+id/btnTryForFree"
+            app:layout_constraintDimensionRatio="W,1:1"
+            app:layout_constraintEnd_toEndOf="@+id/btnTryForFree"
+            app:layout_constraintStart_toStartOf="@+id/btnTryForFree"
+            app:layout_constraintTop_toTopOf="@+id/btnTryForFree" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

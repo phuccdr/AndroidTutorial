@@ -28,4 +28,13 @@
     <color name="color_off_switch">#0F1E47</color>
     <color name="color_on_switch">#6477FF</color>
     <color name="color_5F5F5F">#5F5F5F</color>
+    <color name="color_FFFFFF66">#66FFFFFF</color>
+    <color name="color_0E111B">#0E111B</color>
+    <color name="color_D0DFFF">#D0DFFF</color>
+    <color name="color_8147FF">#8147FF</color>
+    <color name="color_908DAC">#908DAC</color>
+    <color name="color_25104A">#25104A</color>
+    <color name="color_47240F66">#6647240F</color>
+    <color name="color_006C43">#006C43</color>
+    <color name="color_4A2610">#4A2610</color>
 </resources>

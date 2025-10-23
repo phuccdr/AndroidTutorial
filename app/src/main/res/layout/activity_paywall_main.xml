@@ -41,8 +41,39 @@
         android:id="@+id/btnNavigateToPaywallOnboarding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Navigate to Paywall Onboarding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNavigateToDialogSale30PercentYearly" />
+
+    <Button
+        android:id="@+id/btnNavigateToUnLockFeature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/navigate_to_unlock_feature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNavigateToPaywallOnboarding" />
+
+    <Button
+        android:id="@+id/btnNavigateToYearlySubscriptionBottomSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="@string/navigate_to_yearly_subscription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNavigateToUnLockFeature" />
+
+    <Button
+        android:id="@+id/btnNavigateToYearlySubscriptionFullScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="@string/navigate_to_yearly_subscription_full_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNavigateToYearlySubscriptionBottomSheet" />
 </androidx.constraintlayout.widget.ConstraintLayout>

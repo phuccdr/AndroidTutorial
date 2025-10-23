@@ -10,240 +10,245 @@
             type="com.eco.androidtutorial.ui.LoadingState" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_transparent">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideLinePaddingEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.95" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideLinePaddingStart"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.05" />
+            android:background="@color/color_transparent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideLine16Percent"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1666" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLinePaddingEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideLine90Percent"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLinePaddingStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLine16Percent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1666" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnClose"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_24sdp"
-            android:background="@drawable/btn_close"
-            app:layout_constraintDimensionRatio="1"
-            app:layout_constraintStart_toEndOf="@id/guideLinePaddingStart"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/bgV9Compress"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="60dp"
-            android:src="@drawable/bg_dialog_sale_30percent_weekly"
-            app:layout_constraintDimensionRatio="0.84"
-            app:layout_constraintEnd_toEndOf="@+id/guideLinePaddingEnd"
-            app:layout_constraintStart_toStartOf="@+id/guideLinePaddingStart"
-            app:layout_constraintTop_toBottomOf="@+id/btnClose" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/txtV9Compress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_42sdp"
-            android:background="@drawable/ic_text_v9_compress"
-            app:layout_constraintEnd_toStartOf="@+id/btnPro"
-            app:layout_constraintTop_toTopOf="@id/bgV9Compress" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btnPro"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_15sdp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toBottomOf="@+id/txtV9Compress"
-            app:layout_constraintDimensionRatio="W,41.29:20.64"
-            app:layout_constraintEnd_toEndOf="@+id/guideLine90Percent"
-            app:layout_constraintTop_toTopOf="@+id/txtV9Compress"
-            app:srcCompat="@drawable/bg_button_pro" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/txtButtonPro"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scaleType="centerInside"
-            app:layout_constraintBottom_toBottomOf="@id/btnPro"
-            app:layout_constraintLeft_toLeftOf="@id/btnPro"
-            app:layout_constraintRight_toRightOf="@id/btnPro"
-            app:layout_constraintTop_toTopOf="@+id/btnPro"
-            app:srcCompat="@drawable/ic_text_pro" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLine90Percent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
 
 
-        <TextView
-            android:id="@+id/tvSlogan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:fontFamily="@font/funnel_sans_bold"
-            android:text="@string/faster_compress_made_simple"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_13sdp"
-            app:layout_constraintEnd_toEndOf="@+id/btnPro"
-            app:layout_constraintTop_toBottomOf="@+id/txtV9Compress" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnClose"
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:background="@drawable/btn_close"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toEndOf="@id/guideLinePaddingStart"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imv30PercentOff"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_9sdp"
-            android:paddingTop="@dimen/_12sdp"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="@+id/tvSlogan"
-            app:layout_constraintTop_toBottomOf="@+id/tvSlogan"
-            app:srcCompat="@drawable/ic_text_30percent_off_right" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bgV9Compress"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/bg_dialog_sale_30percent_weekly"
+                app:layout_constraintDimensionRatio="0.84"
+                app:layout_constraintEnd_toEndOf="@+id/guideLinePaddingEnd"
+                app:layout_constraintStart_toStartOf="@+id/guideLinePaddingStart"
+                app:layout_constraintTop_toBottomOf="@+id/btnClose" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/txtV9Compress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_42sdp"
+                android:background="@drawable/ic_text_v9_compress"
+                app:layout_constraintEnd_toStartOf="@+id/btnPro"
+                app:layout_constraintTop_toTopOf="@id/bgV9Compress" />
 
-        <TextView
-            android:id="@+id/txtTry3ForFree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:background="@drawable/bg_overlay_text_try_3_for_free"
-            android:fontFamily="@font/funnel_sans_semi_bold"
-            android:gravity="center"
-            android:text="@string/try_3_days_for_free_then_8_99_per_week"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_10sdp"
-            app:layout_constraintEnd_toEndOf="@+id/imv30PercentOff"
-            app:layout_constraintStart_toEndOf="@id/guideLine16Percent"
-            app:layout_constraintTop_toBottomOf="@+id/imv30PercentOff" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnPro"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtV9Compress"
+                app:layout_constraintDimensionRatio="W,41.29:20.64"
+                app:layout_constraintEnd_toEndOf="@+id/guideLine90Percent"
+                app:layout_constraintTop_toTopOf="@+id/txtV9Compress"
+                app:srcCompat="@drawable/bg_button_pro" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnClaimOffer"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:background="@drawable/bg_button_claim_offer_sale_30percent_weekly"
-            android:fontFamily="@font/funnel_sans_extra_bold"
-            android:text="@string/claim_offer"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12sdp"
-            app:layout_constraintDimensionRatio="6.15"
-            app:layout_constraintEnd_toEndOf="@id/bgV9Compress"
-            app:layout_constraintStart_toStartOf="@id/bgV9Compress"
-            app:layout_constraintTop_toBottomOf="@+id/bgV9Compress" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnClaimOfferLoading"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:background="@drawable/bg_button_claim_offer_sale_30percent_weekly"
-            android:visibility="invisible"
-            app:layout_constraintDimensionRatio="6.15"
-            app:layout_constraintEnd_toEndOf="@id/bgV9Compress"
-            app:layout_constraintStart_toStartOf="@id/bgV9Compress"
-            app:layout_constraintTop_toBottomOf="@+id/bgV9Compress" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtCouldntLoadInformation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/funnel_sans_semi_bold"
-            android:text="@string/we_couldnt_load_the_information"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12sdp"
-            app:layout_constraintEnd_toStartOf="@id/guideLinePaddingEnd"
-            app:layout_constraintStart_toEndOf="@id/guideLinePaddingStart"
-            app:layout_constraintTop_toBottomOf="@id/bgV9Compress" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtTryAgain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:fontFamily="@font/funnel_sans_regular"
-            android:text="@string/try_again"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_10sdp"
-            app:layout_constraintEnd_toEndOf="@+id/txtCouldntLoadInformation"
-            app:layout_constraintStart_toStartOf="@+id/txtCouldntLoadInformation"
-            app:layout_constraintTop_toBottomOf="@+id/txtCouldntLoadInformation" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTermsAndPrivacy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:fontFamily="@font/funnel_sans_regular"
-            android:gravity="center"
-            android:lineHeight="@dimen/_10sdp"
-            android:paddingHorizontal="@dimen/_15sdp"
-            android:paddingVertical="@dimen/_6sdp"
-            android:text="@string/by_continuing_you_agree_to_our_terms_and_privacy_policies_n_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_n_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_n_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_n_subscription_is_not_required_to_use_v9compress"
-            android:textColor="@color/color_EAF5F8"
-            android:textSize="@dimen/_8sdp"
-            app:layout_constraintEnd_toEndOf="@id/bgV9Compress"
-            app:layout_constraintStart_toStartOf="@id/bgV9Compress"
-            app:layout_constraintTop_toBottomOf="@+id/btnClaimOffer" />
-
-        <ProgressBar
-            android:id="@+id/progressBarBtnClaimOffer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/_3sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/btnClaimOfferLoading"
-            app:layout_constraintEnd_toEndOf="@+id/btnClaimOfferLoading"
-            app:layout_constraintStart_toStartOf="@+id/btnClaimOfferLoading"
-            app:layout_constraintTop_toTopOf="@+id/btnClaimOfferLoading" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/txtButtonPro"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="@id/btnPro"
+                app:layout_constraintLeft_toLeftOf="@id/btnPro"
+                app:layout_constraintRight_toRightOf="@id/btnPro"
+                app:layout_constraintTop_toTopOf="@+id/btnPro"
+                app:srcCompat="@drawable/ic_text_pro" />
 
 
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/groupLoading"
-            state='@{state}'
-            targetState='@{LoadingState.Loading}'
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:constraint_referenced_ids="progressBarBtnClaimOffer,btnClaimOfferLoading" />
+            <TextView
+                android:id="@+id/tvSlogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/funnel_sans_bold"
+                android:text="@string/faster_compress_made_simple"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="@+id/btnPro"
+                app:layout_constraintTop_toBottomOf="@+id/txtV9Compress" />
 
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/groupFailed"
-            state='@{state}'
-            targetState='@{LoadingState.Failed}'
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="txtCouldntLoadInformation,txtTryAgain" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imv30PercentOff"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="@+id/tvSlogan"
+                app:layout_constraintTop_toBottomOf="@+id/tvSlogan"
+                app:srcCompat="@drawable/ic_text_30percent_off_right" />
 
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/groupSuccess"
-            state='@{state}'
-            targetState='@{LoadingState.Success}'
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="txtTry3ForFree, btnClaimOffer"
 
-            />
+            <TextView
+                android:id="@+id/txtTry3ForFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/bg_overlay_text_try_3_for_free"
+                android:fontFamily="@font/funnel_sans_semi_bold"
+                android:gravity="center"
+                android:text="@string/try_3_days_for_free_then_8_99_per_week"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/imv30PercentOff"
+                app:layout_constraintStart_toEndOf="@id/guideLine16Percent"
+                app:layout_constraintTop_toBottomOf="@+id/imv30PercentOff" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnClaimOffer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_button_claim_offer_sale_30percent_weekly"
+                android:fontFamily="@font/funnel_sans_extra_bold"
+                android:text="@string/claim_offer"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintDimensionRatio="6.15"
+                app:layout_constraintEnd_toEndOf="@id/bgV9Compress"
+                app:layout_constraintStart_toStartOf="@id/bgV9Compress"
+                app:layout_constraintTop_toBottomOf="@+id/bgV9Compress" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnClaimOfferLoading"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/bg_button_claim_offer_sale_30percent_weekly"
+                android:visibility="invisible"
+                app:layout_constraintDimensionRatio="6.15"
+                app:layout_constraintEnd_toEndOf="@id/bgV9Compress"
+                app:layout_constraintStart_toStartOf="@id/bgV9Compress"
+                app:layout_constraintTop_toBottomOf="@+id/bgV9Compress" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtCouldntLoadInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/funnel_sans_semi_bold"
+                android:text="@string/we_couldnt_load_the_information"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toStartOf="@id/guideLinePaddingEnd"
+                app:layout_constraintStart_toEndOf="@id/guideLinePaddingStart"
+                app:layout_constraintTop_toBottomOf="@id/bgV9Compress" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTryAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/funnel_sans_regular"
+                android:text="@string/try_again"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/txtCouldntLoadInformation"
+                app:layout_constraintStart_toStartOf="@+id/txtCouldntLoadInformation"
+                app:layout_constraintTop_toBottomOf="@+id/txtCouldntLoadInformation" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTermsAndPrivacy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/funnel_sans_regular"
+                android:gravity="center"
+                android:lineHeight="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/by_continuing_you_agree_to_our_terms_and_privacy_policies_n_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_n_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_n_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_n_subscription_is_not_required_to_use_v9compress"
+                android:textColor="@color/color_EAF5F8"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="@id/bgV9Compress"
+                app:layout_constraintStart_toStartOf="@id/bgV9Compress"
+                app:layout_constraintTop_toBottomOf="@+id/btnClaimOffer" />
+
+            <ProgressBar
+                android:id="@+id/progressBarBtnClaimOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_3sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnClaimOfferLoading"
+                app:layout_constraintEnd_toEndOf="@+id/btnClaimOfferLoading"
+                app:layout_constraintStart_toStartOf="@+id/btnClaimOfferLoading"
+                app:layout_constraintTop_toTopOf="@+id/btnClaimOfferLoading" />
+
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupLoading"
+                state='@{state}'
+                targetState='@{LoadingState.Loading}'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:constraint_referenced_ids="progressBarBtnClaimOffer,btnClaimOfferLoading" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupFailed"
+                state='@{state}'
+                targetState='@{LoadingState.Failed}'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="txtCouldntLoadInformation,txtTryAgain" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupSuccess"
+                state='@{state}'
+                targetState='@{LoadingState.Success}'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="txtTry3ForFree, btnClaimOffer"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

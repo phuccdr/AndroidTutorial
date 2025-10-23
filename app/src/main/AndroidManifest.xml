@@ -25,10 +25,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTutorial">
         <activity
+            android:name=".ui.yearlysubscriptionbottomsheet.YearlySubscriptionBottomSheetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.unlock.UnlockActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.dialogyearly.DemoDialogSale30percentYearlyActivity"
             android:exported="false" />
         <activity
-
             android:name=".ui.paywall50percentweekly.PaywallSale50PercentWeeklyActivity"
             android:exported="false" />
         <activity

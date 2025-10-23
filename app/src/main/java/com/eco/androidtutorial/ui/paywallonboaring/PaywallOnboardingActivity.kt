@@ -4,14 +4,14 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.eco.androidtutorial.R
 import com.eco.androidtutorial.databinding.ActivityPaywallOnboardingBinding
+import com.eco.androidtutorial.ui.TermAndPrivacyHelper
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class PaywallOnboardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPaywallOnboardingBinding
-    private var toggleState = false
-    private val subscriptionPlan = SubscriptionPlan.Weekly
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +25,7 @@ class PaywallOnboardingActivity : AppCompatActivity() {
     private fun setupUI() {
         binding.apply {
             subscriptionPlan = SubscriptionPlan.Yearly
+            toggleState = true
             btnYearly.setOnClickListener {
                 subscriptionPlan = SubscriptionPlan.Yearly
             }
@@ -32,9 +33,20 @@ class PaywallOnboardingActivity : AppCompatActivity() {
                 subscriptionPlan = SubscriptionPlan.Weekly
             }
             switchTrial.setOnCheckedChangeListener { _, isChecked ->
-                updateSwitchState(isChecked)
+                toggleState = isChecked
+            }
+            btnClose.setOnClickListener {
+                finish()
             }
         }
+        setupTermsAndPrivacyText()
+    }
+
+    private fun setupTermsAndPrivacyText() {
+        TermAndPrivacyHelper(this, binding.txtTermsAndPolicies, R.color.color_4D5A68).setup()
+        TermAndPrivacyHelper(
+            this, binding.txtTermsAndPoliciesNotEligible, R.color.color_4D5A68
+        ).setup()
     }
 
     private fun loadData() {
@@ -57,10 +69,4 @@ class PaywallOnboardingActivity : AppCompatActivity() {
     private fun updateTrialState(state: StateTrial) {
         binding.stateTrial = state
     }
-
-    private fun updateSwitchState(isChecked: Boolean) {
-
-    }
-
-
 }
