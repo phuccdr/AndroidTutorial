@@ -4,17 +4,17 @@
 
     <data>
 
-        <import type="com.eco.androidtutorial.ui.paywallonboaring.StateTrial" />
+        <import type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.StateTrial" />
 
         <import type="android.view.View" />
 
         <variable
             name="stateTrial"
-            type="com.eco.androidtutorial.ui.paywallonboaring.StateTrial" />
+            type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.StateTrial" />
 
         <variable
             name="subscriptionPlan"
-            type="com.eco.androidtutorial.ui.paywallonboaring.SubscriptionPlan" />
+            type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.SubscriptionPlan" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -116,6 +116,7 @@
                 android:layout_marginEnd="@dimen/_9sdp"
                 android:layout_marginBottom="@dimen/_9sdp"
                 android:indeterminateTint="@color/color_0F1E47"
+                android:visibility='@{stateTrial == StateTrial.Loading ? View.VISIBLE : View.GONE}'
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="W,1:1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -129,6 +130,7 @@
                 android:fontFamily="@font/readex_pro_regular"
                 android:text="@string/year"
                 android:textSize="@dimen/_9sdp"
+                android:visibility='@{stateTrial != StateTrial.Loading ? View.VISIBLE : View.GONE}'
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -141,6 +143,7 @@
                 android:text="@string/_19_99"
                 android:textColor="@color/color_25104A"
                 android:textSize="@dimen/_15sdp"
+                android:visibility='@{stateTrial != StateTrial.Loading ? View.VISIBLE : View.GONE}'
                 app:layout_constraintBottom_toBottomOf="@+id/txtYearly"
                 app:layout_constraintEnd_toStartOf="@+id/txtYearly"
                 app:layout_constraintTop_toTopOf="@+id/txtYearly" />
@@ -176,6 +179,7 @@
                 android:fontFamily="@font/readex_pro_regular"
                 android:text="@string/week"
                 android:textSize="@dimen/_9sdp"
+                android:visibility='@{stateTrial != StateTrial.Loading ? View.VISIBLE : View.GONE}'
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -188,6 +192,7 @@
                 android:text="@string/_4_99"
                 android:textColor="@color/color_25104A"
                 android:textSize="@dimen/_15sdp"
+                android:visibility='@{stateTrial != StateTrial.Loading ? View.VISIBLE : View.GONE}'
                 app:layout_constraintBottom_toBottomOf="@+id/txtWeekly"
                 app:layout_constraintEnd_toStartOf="@+id/txtWeekly"
                 app:layout_constraintTop_toTopOf="@+id/txtWeekly" />
@@ -197,6 +202,7 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="@dimen/_9sdp"
                 android:indeterminateTint="@color/color_0F1E47"
+                android:visibility='@{stateTrial == StateTrial.Loading ? View.VISIBLE : View.GONE}'
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="W,1:1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -220,7 +226,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btnTryForFree"
-            stateTrial='@{stateTrial}'
+            stateTrial3='@{stateTrial}'
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/_12sdp"
@@ -265,6 +271,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt3DayFreeTrialEnabled"
+                stateForShield='@{stateTrial}'
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/readex_pro_regular"
@@ -274,6 +281,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTermsAndPolicies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"

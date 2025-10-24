@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.StateTrial" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="stateTrial"
+            type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.StateTrial" />
+
+        <variable
+            name="subscriptionPlan"
+            type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.SubscriptionPlan" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_bottom_sheet_yearly_subscription"
+        android:padding="@dimen/_12sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icCrown"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.078"
+            app:srcCompat="@drawable/ic_crown" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:fontFamily="@font/readex_pro_bold"
+            android:gravity="center"
+            android:text="@string/smarter_storage_made_affordable"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icCrown" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSalePercent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_txt_yearly_subscription_top_selected"
+            android:fontFamily="@font/readex_pro_bold"
+            android:gravity="center"
+            android:text="@string/saved_92"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintDimensionRatio="H,328:28"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bgYearlySubscriptionBottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_txt_yearly_subscription_bottom_selected"
+            app:layout_constraintDimensionRatio="H,328:78"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSalePercent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitleYearlySubscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:fontFamily="@font/readex_pro_bold"
+                android:text="@string/yearly_plan"
+                android:textColor="@color/color_25104A"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintBottom_toTopOf="@+id/appCompatTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro_regular"
+                android:text="@string/only_0_412_per_week"
+                android:textSize="@dimen/_9sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/txtTitleYearlySubscription"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleYearlySubscription" />
+
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:layout_marginBottom="@dimen/_9sdp"
+                android:indeterminateTint="@color/color_0F1E47"
+                android:visibility='@{stateTrial == StateTrial.Loading ? View.VISIBLE : View.GONE}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="W,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtYearly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:fontFamily="@font/readex_pro_regular"
+                android:text="@string/year"
+                android:textSize="@dimen/_9sdp"
+                android:visibility='@{stateTrial != StateTrial.Loading ? View.VISIBLE : View.GONE}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPriceYearlySubscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro_bold"
+                android:text="@string/_19_99"
+                android:textColor="@color/color_25104A"
+                android:textSize="@dimen/_15sdp"
+                android:visibility='@{stateTrial != StateTrial.Loading ? View.VISIBLE : View.GONE}'
+                app:layout_constraintBottom_toBottomOf="@+id/txtYearly"
+                app:layout_constraintEnd_toStartOf="@+id/txtYearly"
+                app:layout_constraintTop_toTopOf="@+id/txtYearly" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bgWeeklySubscriptionBottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_txt_weekly_subscription_unselected"
+            app:layout_constraintDimensionRatio="H,328:56"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bgYearlySubscriptionBottom">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro_bold"
+                android:text="@string/weekly_plan"
+                android:textColor="@color/color_25104A"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtWeekly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:fontFamily="@font/readex_pro_regular"
+                android:text="@string/week"
+                android:textSize="@dimen/_9sdp"
+                android:visibility='@{stateTrial != StateTrial.Loading ? View.VISIBLE : View.GONE}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPriceWeeklySubscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro_bold"
+                android:text="@string/_4_99"
+                android:textColor="@color/color_25104A"
+                android:textSize="@dimen/_15sdp"
+                android:visibility='@{stateTrial != StateTrial.Loading ? View.VISIBLE : View.GONE}'
+                app:layout_constraintBottom_toBottomOf="@+id/txtWeekly"
+                app:layout_constraintEnd_toStartOf="@+id/txtWeekly"
+                app:layout_constraintTop_toTopOf="@+id/txtWeekly" />
+
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:indeterminateTint="@color/color_0F1E47"
+                android:visibility='@{stateTrial == StateTrial.Loading ? View.VISIBLE : View.GONE}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="W,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtIntroduction"
+            stateTrial2='@{stateTrial}'
+            subscriptionPlan2='@{subscriptionPlan}'
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/readex_pro_regular"
+            android:gravity="center"
+            android:text="@string/_4_99_week_after_free_trial_ends_auto_renew_cancel_anytime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bgWeeklySubscriptionBottom" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnTryForFree"
+            stateTrial3='@{stateTrial}'
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/bg_button_try_for_free_yearly_subscription"
+            android:fontFamily="@font/readex_pro_bold"
+            android:gravity="center"
+            android:text="@string/try_for_free"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintDimensionRatio="H,328:54"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtIntroduction" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/color_FFFFFF66"
+            android:visibility='@{stateTrial == StateTrial.Loading ? View.VISIBLE : View.GONE}'
+            app:layout_constraintBottom_toBottomOf="@+id/btnTryForFree"
+            app:layout_constraintEnd_toEndOf="@+id/btnTryForFree"
+            app:layout_constraintStart_toStartOf="@+id/btnTryForFree"
+            app:layout_constraintTop_toTopOf="@+id/btnTryForFree" />
+
+        <LinearLayout
+            android:id="@+id/linerLayout3DayFreeTrialEnabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnTryForFree">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icShield"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_6sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/ic_shield" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt3DayFreeTrialEnabled"
+                stateForShield='@{stateTrial}'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro_regular"
+                android:text="@string/_3_day_free_trial_enabled"
+                android:textColor="@color/color_006C43"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTermsAndPolicies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="@string/by_continuing_you_agree_to_our_terms_and_privacy_policies_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_subscription_is_not_required_to_use_v9compress"
+            android:textColor="@color/color_4D5A68"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linerLayout3DayFreeTrialEnabled" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

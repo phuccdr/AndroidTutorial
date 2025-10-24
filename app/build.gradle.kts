@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.eco.androidtutorial"
+    namespace = "com.eco.music"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.eco.androidtutorial"
+        applicationId = "com.eco.musicplayer.audioplayer.music"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -52,4 +52,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.lottie)
     implementation("com.intuit.sdp:sdp-android:1.1.1")
+    implementation("com.android.billingclient:billing:7.1.1")
+    implementation("com.android.billingclient:billing-ktx:7.1.1")
 }

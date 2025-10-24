@@ -8,6 +8,7 @@
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+    <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="29" />
@@ -25,70 +26,73 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTutorial">
         <activity
-            android:name=".ui.yearlysubscriptionbottomsheet.YearlySubscriptionBottomSheetActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.yearlysubscriptionfullscreen.YearlySubscriptionFullScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.unlock.UnlockActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.yearlysubscriptionbottomsheet.YearlySubscriptionBottomSheetActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.dialogyearly.DemoDialogSale30percentYearlyActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.unlock.UnlockActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.paywall50percentweekly.PaywallSale50PercentWeeklyActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.dialogyearly.DemoDialogSale30percentYearlyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.paywallonboaring.PaywallOnboardingActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.paywall50percentweekly.PaywallSale50PercentWeeklyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.dialogweekly.DemoDialogSale30percentWeeklyActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.PaywallOnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.calculator.CalculatorActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.dialogweekly.DemoDialogSale30percentWeeklyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.calculator.MainActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.calculator.CalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".managementbackstack.manifestattributes.taskaffinity.SecondaryTaskAffinityActovity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.calculator.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".managementbackstack.manifestattributes.alwaysretaintaskstate.AlwaysRetainTaskStateActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.taskaffinity.SecondaryTaskAffinityActovity"
             android:exported="false" />
         <activity
-            android:name=".managementbackstack.manifestattributes.cleartaskonlaunch.ClearTaskOnLaunchActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.alwaysretaintaskstate.AlwaysRetainTaskStateActivity"
             android:exported="false" />
         <activity
-            android:name=".managementbackstack.manifestattributes.taskaffinity.FirstTaskAffinityActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.cleartaskonlaunch.ClearTaskOnLaunchActivity"
             android:exported="false" />
         <activity
-            android:name=".managementbackstack.intentflag.SingleTopFlagActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.taskaffinity.FirstTaskAffinityActivity"
             android:exported="false" />
         <activity
-            android:name=".managementbackstack.intentflag.ClearTopFlagActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.intentflag.SingleTopFlagActivity"
             android:exported="false" />
         <activity
-            android:name=".managementbackstack.intentflag.NewTaskFlagActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.intentflag.ClearTopFlagActivity"
             android:exported="false" />
         <activity
-            android:name=".registerforactivityresult.common.ChooseFileActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.intentflag.NewTaskFlagActivity"
             android:exported="false" />
         <activity
-            android:name=".lifecycle.viewmodel.DashboardActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.registerforactivityresult.common.ChooseFileActivity"
             android:exported="false" />
         <activity
-            android:name=".lifecycle.LifecycleExampleNavActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.lifecycle.viewmodel.DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".lifecycle.LifecycleExampleActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.lifecycle.LifecycleExampleNavActivity"
             android:exported="false" />
         <activity
-            android:name=".senddatabetweenactivity.ReceiverActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.lifecycle.LifecycleExampleActivity"
             android:exported="false" />
         <activity
-            android:name=".senddatabetweenactivity.SenderActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.senddatabetweenactivity.ReceiverActivity"
             android:exported="false" />
         <activity
-            android:name=".managementbackstack.manifestattributes.launchmode.AlarmRingActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.senddatabetweenactivity.SenderActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.launchmode.AlarmRingActivity"
             android:exported="false"
             android:launchMode="singleInstance" />
         <!--
@@ -96,7 +100,7 @@
         Không có activity nào khác có thể nằm chung task với nó.
         -->
         <activity
-            android:name=".managementbackstack.manifestattributes.launchmode.HomeActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.launchmode.HomeActivity"
             android:exported="false"
             android:launchMode="singleTask" />
         <!--
@@ -104,21 +108,21 @@
         Nếu activity đã tồn tại ở dưới stack, toàn bộ activity ở trên nó sẽ bị xóa (finish), và activity đó sẽ được đưa lên đỉnh. Sau đó gọi onNewIntent().
         -->
         <activity
-            android:name=".managementbackstack.manifestattributes.launchmode.NotificationDetailActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.launchmode.NotificationDetailActivity"
             android:exported="false"
             android:launchMode="singleTop" /> <!-- SingleTop: Nếu Acvitiy đang trên đỉnh stack thì không tạo mới mà gọi onNewIntent(). Nếu không thì vẫn tạo như bình thường. -->
         <activity
-            android:name=".managementbackstack.manifestattributes.launchmode.LaunchModeExampleActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.launchmode.LaunchModeExampleActivity"
             android:exported="false"
             android:launchMode="standard" />
         <activity
-            android:name=".registerforactivityresult.permission.SelectImageActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.registerforactivityresult.permission.SelectImageActivity"
             android:exported="false" />
         <activity
-            android:name=".registerforactivityresult.common.RegisterForActivityResultExampleActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.registerforactivityresult.common.RegisterForActivityResultExampleActivity"
             android:exported="false" />
         <activity
-            android:name=".intentfilter.IntentFilterExampleActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.intentfilter.IntentFilterExampleActivity"
             android:exported="false">
 
             <!-- intent-filter> dung de khai bao action cho activity, -->
@@ -132,10 +136,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".navigate.NavigateExampleActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.navigate.NavigateExampleActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.PaywallMainActivity"
+            android:name="com.eco.musicplayer.audioplayer.music.ui.PaywallMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

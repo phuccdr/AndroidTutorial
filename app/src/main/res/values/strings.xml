@@ -72,6 +72,7 @@
     <string name="introduceSaleWeeklyEligible">$4.99/week after free trial ends.\nAuto renew, cancel anytime</string>
     <string name="introduceSaleYearlyNotEligible">Auto renew at $19.99/year</string>
     <string name="introduceSaleWeeklyNotEligible">Auto renew at $4.99/week</string>
+    <string name="cancel_anytime">Cancel anytime</string>
 
 
 </resources>

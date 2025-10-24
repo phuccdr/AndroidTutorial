@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    tools:context=".managementbackstack.launchmode.NotificationActivity">
+    tools:context="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.launchmode.NotificationDetailActivity">
 
     <data>
 
         <variable
             name="notification"
-            type="com.eco.androidtutorial.managementbackstack.manifestattributes.launchmode.model.Notification" />
+            type="com.eco.musicplayer.audioplayer.music.managementbackstack.manifestattributes.launchmode.model.Notification" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

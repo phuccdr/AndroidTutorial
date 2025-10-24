@@ -3,11 +3,11 @@
 
     <data>
 
-        <import type="com.eco.androidtutorial.ui.LoadingState" />
+        <import type="com.eco.musicplayer.audioplayer.music.ui.LoadingState" />
 
         <variable
             name="state"
-            type="com.eco.androidtutorial.ui.LoadingState" />
+            type="com.eco.musicplayer.audioplayer.music.ui.LoadingState" />
     </data>
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"

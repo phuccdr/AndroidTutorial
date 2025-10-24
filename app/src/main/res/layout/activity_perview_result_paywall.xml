@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_6477FF"
-    tools:context=".ui.dialogweekly.DemoDialogSale30percentWeeklyActivity">
+    tools:context="com.eco.musicplayer.audioplayer.music.ui.dialogweekly.DemoDialogSale30percentWeeklyActivity">
 
     <Button
         android:id="@+id/btnShowDialogSale30PercentWeekly"

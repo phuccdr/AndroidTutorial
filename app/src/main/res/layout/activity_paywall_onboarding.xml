@@ -6,261 +6,266 @@
 
     <data>
 
-        <import type="com.eco.androidtutorial.ui.paywallonboaring.StateTrial" />
+        <import type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.StateTrial" />
 
-        <import type="com.eco.androidtutorial.ui.paywallonboaring.SubscriptionPlan" />
+        <import type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.SubscriptionPlan" />
 
         <import type="android.view.View" />
 
 
         <variable
             name="stateTrial"
-            type="com.eco.androidtutorial.ui.paywallonboaring.StateTrial" />
+            type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.StateTrial" />
 
         <variable
             name="subscriptionPlan"
-            type="com.eco.androidtutorial.ui.paywallonboaring.SubscriptionPlan" />
+            type="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.SubscriptionPlan" />
 
         <variable
             name="toggleState"
             type="Boolean" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.paywallonboaring.PaywallOnboardingActivity">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/switchBtn"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_48sdp"
-            android:background="@drawable/bg_switch_yearly_weekly"
-            android:orientation="horizontal"
-            android:padding="@dimen/_3sdp"
-            android:textSize="@dimen/_10sdp"
-            app:layout_constraintDimensionRatio="220:34"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.61">
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.eco.musicplayer.audioplayer.music.ui.paywallonboaring.PaywallOnboardingActivity">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnYearly"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/switchBtn"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_switch_toggle_selected"
-                android:fontFamily="@font/readex_pro_regular"
-                android:gravity="center"
-                android:text="@string/yearly"
-                android:textColor="@color/color_0F1E47"
-                android:textSize="@dimen/_11sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnWeekly"
-                app:layout_constraintHorizontal_bias="0.5"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_48sdp"
+                android:background="@drawable/bg_switch_yearly_weekly"
+                android:orientation="horizontal"
+                android:padding="@dimen/_3sdp"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintDimensionRatio="220:34"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.48"
-                app:selectedSubscriptionPlan='@{subscriptionPlan}'
-                app:targetSubscriptionPlan='@{SubscriptionPlan.Yearly}' />
+                app:layout_constraintWidth_percent="0.61">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnYearly"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_switch_toggle_selected"
+                    android:fontFamily="@font/readex_pro_regular"
+                    android:gravity="center"
+                    android:text="@string/yearly"
+                    android:textColor="@color/color_0F1E47"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnWeekly"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.48"
+                    app:selectedSubscriptionPlan='@{subscriptionPlan}'
+                    app:targetSubscriptionPlan='@{SubscriptionPlan.Yearly}' />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnWeekly"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:background="@drawable/bg_switch_toggle_unselected"
+                    android:fontFamily="@font/readex_pro_regular"
+                    android:gravity="center"
+                    android:text="@string/weekly"
+                    android:textColor="@color/color_EAF5F8"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnYearly"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.48"
+                    app:selectedSubscriptionPlan='@{subscriptionPlan}'
+                    app:targetSubscriptionPlan='@{SubscriptionPlan.Weekly}' />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnClose"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="@id/switchBtn"
+                app:layout_constraintDimensionRatio="H,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/switchBtn"
+                app:layout_constraintWidth_percent="0.044"
+                app:srcCompat="@drawable/ic_cancel" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnWeekly"
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/readex_pro_bold"
+                android:text="@string/shrink_size_keep_quality"
+                android:textColor="@color/color_0F1E47"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/switchBtn" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img1"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_4sdp"
-                android:background="@drawable/bg_switch_toggle_unselected"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="H,360:284"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTitle"
+                app:srcCompat="@drawable/img_hero_banner" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtIntroduction"
+                stateToggle='@{toggleState}'
+                stateTrial='@{stateTrial}'
+                subscriptionPlan='@{subscriptionPlan}'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:fontFamily="@font/readex_pro_regular"
                 android:gravity="center"
-                android:text="@string/weekly"
-                android:textColor="@color/color_EAF5F8"
-                android:textSize="@dimen/_11sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/_14_99_year_after_free_trial_ends_auto_renew_cancel_anytime"
+                android:textColor="@color/color_0F1E47"
+                android:textSize="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnYearly"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.48"
-                app:selectedSubscriptionPlan='@{subscriptionPlan}'
-                app:targetSubscriptionPlan='@{SubscriptionPlan.Weekly}' />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img1" />
+
+            <View
+                android:id="@+id/bgFreeTrial"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/bg_free_trial_enable"
+                app:layout_constraintDimensionRatio="H,320:49"
+                app:layout_constraintEnd_toEndOf="@+id/txtIntroduction"
+                app:layout_constraintStart_toStartOf="@+id/txtIntroduction"
+                app:layout_constraintTop_toBottomOf="@+id/txtIntroduction"
+                app:layout_constraintWidth_percent="0.88" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtFreeTrial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/readex_pro_regular"
+                android:text="@string/free_trial_enabled"
+                android:textColor="@color/color_0F1E47"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/bgFreeTrial"
+                app:layout_constraintStart_toStartOf="@+id/bgFreeTrial"
+                app:layout_constraintTop_toTopOf="@+id/bgFreeTrial" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchTrial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="@+id/bgFreeTrial"
+                app:layout_constraintDimensionRatio="34:16"
+                app:layout_constraintEnd_toEndOf="@+id/bgFreeTrial"
+                app:layout_constraintTop_toTopOf="@+id/bgFreeTrial"
+                app:thumbTint="@drawable/thumb_tint_switch_trial"
+                app:trackTint="@color/color_0F1E47_alpha_40" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnTryForFree"
+                stateTrial='@{stateTrial}'
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_try_for_free"
+                android:fontFamily="@font/readex_pro_bold"
+                android:gravity="center"
+                android:text="@string/try_for_free"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintDimensionRatio="H,320:54"
+                app:layout_constraintEnd_toEndOf="@+id/bgFreeTrial"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/bgFreeTrial"
+                app:layout_constraintTop_toBottomOf="@+id/bgFreeTrial" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnTryForFreeNotEligible"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/bg_button_try_for_free"
+                android:fontFamily="@font/readex_pro_bold"
+                android:gravity="center"
+                android:text="@string/continue1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:visibility='@{stateTrial == StateTrial.NotEligible ? View.VISIBLE : View.GONE}'
+                app:layout_constraintDimensionRatio="H,320:54"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtIntroduction"
+                app:layout_constraintWidth_percent="0.88" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTermsAndPoliciesNotEligible"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:fontFamily="@font/readex_pro_regular"
+                android:gravity="center"
+                android:lineHeight="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/by_continuing_you_agree_to_our_terms_and_privacy_policies_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_subscription_is_not_required_to_use_v9compress"
+                android:textColor="@color/color_4D5A68"
+                android:textSize="@dimen/_7sdp"
+                android:visibility='@{stateTrial == StateTrial.NotEligible ? View.VISIBLE : View.GONE}'
+                app:layout_constraintEnd_toEndOf="@+id/btnTryForFreeNotEligible"
+                app:layout_constraintStart_toStartOf="@+id/btnTryForFreeNotEligible"
+                app:layout_constraintTop_toBottomOf="@+id/btnTryForFreeNotEligible" />
+
+            <ProgressBar
+                android:id="@+id/processBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_3sdp"
+                android:indeterminateTint="@color/color_FFFFFF66"
+                android:visibility='@{stateTrial == StateTrial.Loading ? View.VISIBLE : View.GONE}'
+                app:layout_constraintBottom_toBottomOf="@+id/btnTryForFree"
+                app:layout_constraintEnd_toEndOf="@+id/btnTryForFree"
+                app:layout_constraintStart_toStartOf="@+id/btnTryForFree"
+                app:layout_constraintTop_toTopOf="@+id/btnTryForFree" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTermsAndPolicies"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:fontFamily="@font/readex_pro_regular"
+                android:gravity="center"
+                android:lineHeight="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:text="@string/by_continuing_you_agree_to_our_terms_and_privacy_policies_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_subscription_is_not_required_to_use_v9compress"
+                android:textColor="@color/color_4D5A68"
+                android:textSize="@dimen/_7sdp"
+                android:visibility='@{stateTrial == StateTrial.NotEligible ? View.INVISIBLE : View.VISIBLE}'
+                app:layout_constraintEnd_toEndOf="@+id/btnTryForFree"
+                app:layout_constraintStart_toStartOf="@+id/btnTryForFree"
+                app:layout_constraintTop_toBottomOf="@+id/btnTryForFree" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btnClose"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginEnd="@dimen/_14sdp"
-            app:layout_constraintBottom_toBottomOf="@id/switchBtn"
-            app:layout_constraintDimensionRatio="H,1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/switchBtn"
-            app:layout_constraintWidth_percent="0.044"
-            app:srcCompat="@drawable/ic_cancel" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/readex_pro_bold"
-            android:text="@string/shrink_size_keep_quality"
-            android:textColor="@color/color_0F1E47"
-            android:textSize="@dimen/_20sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switchBtn" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="H,360:284"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtTitle"
-            app:srcCompat="@drawable/img_hero_banner" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtIntroduction"
-            stateToggle='@{toggleState}'
-            stateTrial='@{stateTrial}'
-            subscriptionPlan='@{subscriptionPlan}'
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/readex_pro_regular"
-            android:gravity="center"
-            android:text="@string/_14_99_year_after_free_trial_ends_auto_renew_cancel_anytime"
-            android:textColor="@color/color_0F1E47"
-            android:textSize="@dimen/_12sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img1" />
-
-        <View
-            android:id="@+id/bgFreeTrial"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:background="@drawable/bg_free_trial_enable"
-            app:layout_constraintDimensionRatio="H,320:49"
-            app:layout_constraintEnd_toEndOf="@+id/txtIntroduction"
-            app:layout_constraintStart_toStartOf="@+id/txtIntroduction"
-            app:layout_constraintTop_toBottomOf="@+id/txtIntroduction"
-            app:layout_constraintWidth_percent="0.88" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtFreeTrial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:fontFamily="@font/readex_pro_regular"
-            android:text="@string/free_trial_enabled"
-            android:textColor="@color/color_0F1E47"
-            android:textSize="@dimen/_10sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/bgFreeTrial"
-            app:layout_constraintStart_toStartOf="@+id/bgFreeTrial"
-            app:layout_constraintTop_toTopOf="@+id/bgFreeTrial" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switchTrial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:checked="true"
-            app:layout_constraintBottom_toBottomOf="@+id/bgFreeTrial"
-            app:layout_constraintDimensionRatio="34:16"
-            app:layout_constraintEnd_toEndOf="@+id/bgFreeTrial"
-            app:layout_constraintTop_toTopOf="@+id/bgFreeTrial"
-            app:thumbTint="@drawable/thumb_tint_switch_trial"
-            app:trackTint="@color/color_0F1E47_alpha_40" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/btnTryForFree"
-            stateTrial='@{stateTrial}'
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_button_try_for_free"
-            android:fontFamily="@font/readex_pro_bold"
-            android:gravity="center"
-            android:text="@string/try_for_free"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_13sdp"
-            app:layout_constraintDimensionRatio="H,320:54"
-            app:layout_constraintEnd_toEndOf="@+id/bgFreeTrial"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/bgFreeTrial"
-            app:layout_constraintTop_toBottomOf="@+id/bgFreeTrial" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/btnTryForFreeNotEligible"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:background="@drawable/bg_button_try_for_free"
-            android:fontFamily="@font/readex_pro_bold"
-            android:gravity="center"
-            android:text="@string/continue1"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_13sdp"
-            android:visibility='@{stateTrial == StateTrial.NotEligible ? View.VISIBLE : View.GONE}'
-            app:layout_constraintDimensionRatio="H,320:54"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtIntroduction"
-            app:layout_constraintWidth_percent="0.88" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtTermsAndPoliciesNotEligible"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_9sdp"
-            android:fontFamily="@font/readex_pro_regular"
-            android:gravity="center"
-            android:lineHeight="@dimen/_10sdp"
-            android:paddingHorizontal="@dimen/_15sdp"
-            android:paddingVertical="@dimen/_6sdp"
-            android:text="@string/by_continuing_you_agree_to_our_terms_and_privacy_policies_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_subscription_is_not_required_to_use_v9compress"
-            android:textColor="@color/color_4D5A68"
-            android:textSize="@dimen/_7sdp"
-            android:visibility='@{stateTrial == StateTrial.NotEligible ? View.VISIBLE : View.GONE}'
-            app:layout_constraintEnd_toEndOf="@+id/btnTryForFreeNotEligible"
-            app:layout_constraintStart_toStartOf="@+id/btnTryForFreeNotEligible"
-            app:layout_constraintTop_toBottomOf="@+id/btnTryForFreeNotEligible" />
-
-        <ProgressBar
-            android:id="@+id/processBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/_3sdp"
-            android:indeterminateTint="@color/color_FFFFFF66"
-            android:visibility='@{stateTrial == StateTrial.Loading ? View.VISIBLE : View.GONE}'
-            app:layout_constraintBottom_toBottomOf="@+id/btnTryForFree"
-            app:layout_constraintEnd_toEndOf="@+id/btnTryForFree"
-            app:layout_constraintStart_toStartOf="@+id/btnTryForFree"
-            app:layout_constraintTop_toTopOf="@+id/btnTryForFree" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtTermsAndPolicies"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_9sdp"
-            android:fontFamily="@font/readex_pro_regular"
-            android:gravity="center"
-            android:lineHeight="@dimen/_10sdp"
-            android:paddingHorizontal="@dimen/_15sdp"
-            android:paddingVertical="@dimen/_6sdp"
-            android:text="@string/by_continuing_you_agree_to_our_terms_and_privacy_policies_subscription_gives_you_access_to_v9compress_s_premium_features_all_ads_will_be_removed_subscription_plans_are_automatically_renewed_and_can_be_canceled_anytime_in_subscriptions_on_google_play_you_will_not_be_charged_if_subscription_is_canceled_before_trial_period_ends_subscription_is_not_required_to_use_v9compress"
-            android:textColor="@color/color_4D5A68"
-            android:textSize="@dimen/_7sdp"
-            android:visibility='@{stateTrial == StateTrial.NotEligible ? View.INVISIBLE : View.VISIBLE}'
-            app:layout_constraintEnd_toEndOf="@+id/btnTryForFree"
-            app:layout_constraintStart_toStartOf="@+id/btnTryForFree"
-            app:layout_constraintTop_toBottomOf="@+id/btnTryForFree" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
